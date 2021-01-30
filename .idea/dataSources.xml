@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postydb@localhost" uuid="3d85ba45-b931-48b8-9b55-6be5386e2f05">
+    <data-source source="LOCAL" name="postydb@localhost" uuid="642260d0-04e5-4f5b-962b-1daff20615b6">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/postydb</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="39c19a54-b148-4ac5-b8f3-729b7f8bc33c">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

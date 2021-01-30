@@ -15,26 +15,29 @@
                 <a href="" class="p-3">Домашняя страница</a>
             </li>
             <li>
-                <a href="" class="p-3">История действий</a>
+                <a href="{{ route('dashboard') }}" class="p-3">История действий</a>
             </li>
             <li>
-                <a href="" class="p-3">Страница с постами</a>
+                <a href="{{ route('posts') }}" class="p-3">Страница с постами</a>
             </li>
         </ul>
 
         <ul class="flex items-center">
             @auth
                 <li>
-                    <a href="" class="p-3">Имя пользователя</a>
+                    <a href="" class="p-3">{{ auth()->user()->name }}</a>
                 </li>
                 <li>
-                    <a href="" class="p-3">Выйти</a>
+                    <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                        @csrf
+                        <button class="p-3" type="submit">Выйти</button>
+                    </form>
                 </li>
             @endauth
 
             @guest
                 <li>
-                    <a href="" class="p-3">Войти</a>
+                    <a href="{{ route('login') }}" class="p-3">Войти</a>
                 </li>
                 <li>
                     <a href="{{ route('register')}}" class="p-3">Регистрация</a>

@@ -3,9 +3,14 @@
 @section('content')
     <div class="flex justify-center">
         <div class="w-6/12 bg-white p-6 rounded-lg">
+            @if (session('status'))
+                <div class="bg-red-500 p-4 rounded-lg mb-6 text-wgite text-center">
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <form action="{{ route('login') }}" method="POST">
                 @csrf
-
 
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
@@ -29,6 +34,11 @@
                             {{ $message }}
                         </div>
                     @enderror
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" name="remember" id="remember" class="mr-2">
+                    <label for="remember">Запомнить меня</label>
                 </div>
 
 
